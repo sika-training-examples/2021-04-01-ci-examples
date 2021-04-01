@@ -1,9 +1,16 @@
-job1:
-  script: |
-    echo Hello World!
-    echo Ahoj Svete!
 
-job2:
-  script:
-    - echo Hello World!
-    - echo Ahoj Svete!
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  script: echo Build! && sleep 10
+
+test1:
+  stage: test
+  script: echo Test1!
+
+test2:
+  stage: test
+  script: echo Test2!
