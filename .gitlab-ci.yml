@@ -5,3 +5,5 @@ test:
   artifacts:
     reports:
       junit: report.xml
+    paths:
+      - report.xml
