@@ -1,20 +1,11 @@
 except-master:
   script: echo Run test ...
   except:
-    - master
+    refs:
+      - master
 
 master-web:
   script: echo Run deploy ...
   only:
-    - master
-    - web
-
-sched:
-  script: echo Run diagnostics ...
-  only:
-    - schedules
-
-ci-branches:
-  script: echo Run CI reporting ...
-  only:
-    -  /^ci-.*$/
+    refs:
+      - master
