@@ -13,10 +13,6 @@ deploy:
   script: echo Deploy service B && false
 
 
-deploy:
-  stage: deploy
-  script: echo Deploy service B
-
 deploy2:
   stage: deploy
   script: echo Deploy service B
