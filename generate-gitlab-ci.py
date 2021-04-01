@@ -27,6 +27,9 @@ def make_service(name):
             "script":[
                 "echo Deploy %s" % name,
                 "sleep %s" % random_sleep(),
+            ],
+            "needs": [
+                "build-%s" % name,
             ]
         }
     }
