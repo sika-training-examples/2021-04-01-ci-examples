@@ -9,3 +9,11 @@ master-web:
   only:
     refs:
       - master
+
+test:
+  script: echo npm run test && sleep 10
+  only:
+    refs:
+      - master
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /run-e2e/
