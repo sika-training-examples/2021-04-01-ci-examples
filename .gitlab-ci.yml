@@ -1,35 +1,56 @@
+
 stages:
-  - generate
-  - pipeline
+  - build
+  - test
+  - deploy
 
-generate:
-  stage: generate
-  image: python:3.7-slim
-  script: python generate-gitlab-ci.py
-  artifacts:
-    paths:
-      - .gitlab-ci.generated.yml
+linux build:
+  stage: build
+  script: sleep 10 && echo Done
 
-pipeline:
-  stage: pipeline
-  trigger:
-    include:
-      - artifact: .gitlab-ci.generated.yml
-        job: generate
-    strategy: depend
+mac build:
+  stage: build
+  script: sleep 20 && echo Done
 
-triger-pipelines:
-  stage: .pre
-  trigger: test/mirek
+lint:
+  stage: test
+  needs: []
+  script: echo Done
 
-triger-pipelines2:
-  stage: .pre
-  trigger:
-    project: test/mirek
-    strategy: depend
+linux unit tests:
+  stage: test
+  needs:
+    - linux build
+  script: echo Done
 
-triger-pipelines3:
-  stage: .pre
-  trigger:
-    project: test/jh
-    strategy: depend
+linux e2e tests:
+  stage: test
+  needs:
+    - linux build
+  script: sleep 10 && echo Done
+
+mac unit tests:
+  stage: test
+  needs:
+    - mac build
+  script: sleep 5 && echo Done
+
+mac e2e tests:
+  stage: test
+  needs:
+    - mac build
+  script: sleep 30 && echo Done
+
+release linux:
+  stage: deploy
+  script: "echo Done"
+  needs:
+    - linux unit tests
+    - linux e2e tests
+
+release mac:
+  stage: deploy
+  script: "echo Done"
+  needs:
+    - mac unit tests
+    - mac e2e tests
