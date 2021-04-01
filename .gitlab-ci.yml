@@ -1,13 +1,20 @@
-stages:
-  - a
-  - b
+test:
+  script: echo Run test ...
+  except:
+    - master
 
-a:
-  stage: a
-  script: echo aaa
-  when: manual
-  allow_failure: false
+deploy:
+  script: echo Run deploy ...
+  only:
+    - master
+    - web
 
-b:
-  stage: b
-  script: echo aaa
+diagnostics:
+  script: echo Run diagnostics ...
+  only:
+    - schedules
+
+reporting:
+  script: echo Run CI reporting ...
+  only:
+    -  /^ci-.*$/
