@@ -5,7 +5,8 @@ stages:
 a:
   stage: a
   script: echo aaa
-  allow_failure: true
+  when: manual
+  # allow_failure: true
 
 b:
   stage: b
