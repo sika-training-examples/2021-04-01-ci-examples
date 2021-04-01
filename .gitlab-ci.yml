@@ -1,4 +1,9 @@
 
 test:
+  when: manual
   script: echo test ... && false
-  allow_failure: true
+
+test2:
+  when: manual
+  script: echo test ... && false
+  allow_failure: false
