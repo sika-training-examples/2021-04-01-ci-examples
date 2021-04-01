@@ -1,12 +1,12 @@
 job1:
   script: 
     - echo deploy!
-    - echo test!
+    - echo test! && false
     - echo cleanup!
 
 job2:
   script: 
     - echo deploy!
-    - echo test!
+    - echo test! && false
   after_script:
     - echo cleanup!
