@@ -2,7 +2,7 @@
 image: ondrejsika/ci
 
 build:
-  image: nixery.dev/shell/nodejs
+  image: nixery.dev/shell/nodejs/yarn
   script:
     - yarn
     - yarn run build
