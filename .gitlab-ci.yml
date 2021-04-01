@@ -1,4 +1,4 @@
 image: sikalabs/ci
 
 build:
-  script: make build
+  script: env
