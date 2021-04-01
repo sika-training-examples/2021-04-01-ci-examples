@@ -1,8 +1,8 @@
 job:
-  # cache:
-  #   key: ${CI_COMMIT_REF_SLUG}
-  #   paths:
-  #     - now
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - now
   script:
     - date >> now
     - cat now
