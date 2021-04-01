@@ -1,14 +1,11 @@
-stages:
-  - build
-  - deploy
+Build A:
+  script: echo Cuild A ...
+  only:
+    changes:
+      - a/**
 
-.build:
-  stage: build
-  script: echo build & sleep 20
-  except:
-    variables:
-      - $SKIP_BUILD
-
-deploy:
-  stage: deploy
-  script: echo deploy4
+Build B:
+  script: echo Cuild B ...
+  only:
+    changes:
+      - b/**
