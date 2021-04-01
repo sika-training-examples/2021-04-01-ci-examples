@@ -5,3 +5,6 @@ def test_ok():
 
 def test_err():
     assert 1
+
+def test_err():
+    1/0
