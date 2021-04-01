@@ -11,3 +11,28 @@ build:
 deploy:
   stage: deploy
   script: echo Deploy service B
+
+
+deploy:
+  stage: deploy
+  script: echo Deploy service B
+
+deploy2:
+  stage: deploy
+  script: echo Deploy service B
+
+deploy3:
+  stage: deploy
+  script: echo Deploy service B
+
+deploy4:
+  stage: deploy
+  script: echo Deploy service B
+
+deploy5:
+  stage: deploy
+  script: echo Deploy service B
+
+deploy6:
+  stage: deploy
+  script: echo Deploy service B
