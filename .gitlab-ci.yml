@@ -2,6 +2,7 @@ test:
   image: ondrejsika/pytest
   script:
     - pytest --junitxml=report.xml
+  allow_failure: true
   artifacts:
     reports:
       junit: report.xml
