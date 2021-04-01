@@ -1,30 +1,4 @@
-stages:
-  - build
-  - test
-  - deploy
+image: sikalabs/ci
 
 build:
-  stage: build
-  script: echo build
-  only:
-    - branches
-    - merge_request
-
-test-unit:
-  stage: test
-  script: echo test
-  only:
-    - branches
-    - merge_request
-
-test-e2e:
-  stage: test
-  script: echo test & sleep 20
-  only:
-    - merge_request
-
-deploy:
-  stage: deploy
-  script: echo deploy
-  only:
-    - master
+  script: make build
