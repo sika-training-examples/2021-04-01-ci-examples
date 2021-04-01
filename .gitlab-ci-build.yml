@@ -1,5 +1,0 @@
-# .gitlab-ci-build.yml
-
-build:
-  stage: build
-  script: echo build
