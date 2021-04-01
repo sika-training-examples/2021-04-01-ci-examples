@@ -1,6 +1,6 @@
 build:
   stage: .pre
-  script: echo build
+  script: echo build && false
 
 test:
   script: echo Run test ...
