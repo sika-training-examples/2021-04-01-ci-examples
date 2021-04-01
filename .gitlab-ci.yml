@@ -1,12 +1,18 @@
-job1:
-  script: 
-    - echo deploy!
-    - echo test! && false
-    - echo cleanup!
+build:
+  stage: .pre
+  script: echo build
 
-job2:
-  script: 
-    - echo deploy!
-    - echo test! && false
-  after_script:
-    - echo cleanup!
+test:
+  script: echo Run test ...
+
+deploy:
+  script: echo Run deploy ...
+  when: manual
+
+diagnostics:
+  script: echo Run diagnostics ...
+  when: on_failure
+
+reporting:
+  script: echo Run CI reporting ...
+  when: always
