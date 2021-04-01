@@ -5,7 +5,7 @@ stages:
 
 build:
   stage: build
-  script: echo Build! && false
+  script: echo Build! && sleep 10
 
 test1:
   stage: test
@@ -14,3 +14,5 @@ test1:
 test2:
   stage: test
   script: echo Test2!
+  needs: []
+    
