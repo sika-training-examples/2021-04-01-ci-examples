@@ -1,0 +1,20 @@
+{
+  "name": "ondrej",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@gitlab.sikademo.com:test/ondrej.git",
+  "author": "Ondrej Sika <ondrej@ondrejsika.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/vue-fontawesome": "^2.0.2",
+    "angular": "^1.8.2",
+    "gulp-iconfont": "^11.0.0",
+    "gult": "^0.1.0",
+    "next": "^10.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "redux": "^4.0.5",
+    "vercel": "^21.3.3",
+    "vue": "^2.6.12"
+  }
+}
