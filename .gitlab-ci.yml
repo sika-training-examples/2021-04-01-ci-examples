@@ -1,17 +1,8 @@
-variables:
-  XXX_GLOBAL: global
-  XXX_A: $CI_PROJECT_PATH_SLUG-$CI_COMMIT_REF_SLUG
-  XXX_B: $XXX_GROUP--foo
-  XXX_C: $XXX_GROUP--$XXX_PROJECT
-
-before_script:
-  - export XXX_DD=$XXX_C------
-
-job1:
-  script: env | grep XXX
-
-job2:
-  variables:
-    XXX_LOCAL: local
-    XXX_D: $XXX_GROUP--$XXX_PROJECT
-  script: env | grep XXX
+job:
+  # cache:
+  #   key: ${CI_COMMIT_REF_SLUG}
+  #   paths:
+  #     - now
+  script:
+    - date >> now
+    - cat now
