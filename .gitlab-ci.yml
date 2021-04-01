@@ -1,9 +1,12 @@
+stages:
+  - a
+  - b
 
-test:
-  when: manual
-  script: echo test ... && false
+a:
+  stage: a
+  script: echo aaa
+  allow_failure: true
 
-test2:
-  when: manual
-  script: echo test ... && false
-  allow_failure: false
+b:
+  stage: b
+  script: echo aaa
