@@ -1,8 +1,13 @@
-test:
-  image: ondrejsika/pytest
+
+image: ondrejsika/ci
+
+build:
+  image: nixery.dev/shell/nodejs
   script:
-    - pytest --junitxml=report.xml
-  artifacts:
-    reports:
-      junit: report.xml
-      dotenv: .env
+    - yarn
+    - yarn run build
+
+deploy:
+  image: nixery.dev/shell/helm/kubectl
+  script:
+    - kubectl apply -f kubernetes.yml
