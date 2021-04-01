@@ -17,3 +17,19 @@ pipeline:
       - artifact: .gitlab-ci.generated.yml
         job: generate
     strategy: depend
+
+triger-pipelines:
+  stage: .pre
+  trigger: test/mirek
+
+triger-pipelines2:
+  stage: .pre
+  trigger:
+    project: test/mirek
+    strategy: depend
+
+triger-pipelines3:
+  stage: .pre
+  trigger:
+    project: test/jh
+    strategy: depend
