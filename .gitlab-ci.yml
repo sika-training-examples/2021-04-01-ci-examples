@@ -1,13 +1,5 @@
-
-image: ondrejsika/ci
-
-build:
-  image: nixery.dev/shell/nodejs/yarn
+job:
   script:
-    - yarn
-    - yarn run build
-
-deploy:
-  image: nixery.dev/shell/helm/kubectl
-  script:
-    - kubectl apply -f kubernetes.yml
+    - docker login $CI_REGISTRY -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
+    - docker build -t $CI_REGISTRY_IMAGE .
+    - docker push $CI_REGISTRY_IMAGE
