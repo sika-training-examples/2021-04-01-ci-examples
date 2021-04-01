@@ -1,20 +1,20 @@
-test:
+except-master:
   script: echo Run test ...
   except:
     - master
 
-deploy:
+master-web:
   script: echo Run deploy ...
   only:
     - master
     - web
 
-diagnostics:
+sched:
   script: echo Run diagnostics ...
   only:
     - schedules
 
-reporting:
+ci-branches:
   script: echo Run CI reporting ...
   only:
     -  /^ci-.*$/
