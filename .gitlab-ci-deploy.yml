@@ -1,6 +1,16 @@
+# .gitlab-ci.yml
+pipeline_a:
+  trigger:
+    include: a/.gitlab-ci.yml
+    strategy: depend
+  only:
+    changes:
+      - a/**
 
-# .gitlab-ci-deploy.yml
-
-deploy:
-  stage: deploy
-  script: echo deploy
+pipeline_b:
+  trigger:
+    include: b/.gitlab-ci.yml
+    strategy: depend
+  only:
+    changes:
+      - b/**
