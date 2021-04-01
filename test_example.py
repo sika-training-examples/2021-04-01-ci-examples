@@ -1,7 +1,7 @@
 
 # test_example.py
 def test_ok():
-    assert True
+    assert 0
 
 def test_err():
-    assert False
+    assert 1
