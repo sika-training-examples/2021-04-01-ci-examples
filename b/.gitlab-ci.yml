@@ -10,7 +10,7 @@ build:
 
 deploy:
   stage: deploy
-  script: echo Deploy service B
+  script: echo Deploy service B && false
 
 
 deploy:
