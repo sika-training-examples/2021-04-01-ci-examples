@@ -11,4 +11,4 @@ build:
 
 deploy:
   stage: deploy
-  script: echo deploy3
+  script: echo deploy4
