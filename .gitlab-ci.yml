@@ -1,19 +1,11 @@
-except-master:
-  script: echo Run test ...
-  except:
-    refs:
-      - master
+stages:
+  - build
+  - deploy
 
-master-web:
-  script: echo Run deploy ...
-  only:
-    refs:
-      - master
+build:
+  stage: build
+  script: echo build & sleep 20
 
-test:
-  script: echo npm run test && sleep 10
-  only:
-    refs:
-      - master
-    variables:
-      - $CI_COMMIT_MESSAGE =~ /run-e2e/
+deploy:
+  stage: deploy
+  script: echo deploy
