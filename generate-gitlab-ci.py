@@ -1,4 +1,5 @@
 import json
+import random
 
 SERVICES = (
     "foo",
@@ -9,18 +10,23 @@ SERVICES = (
     "ccc",
 )
 
+def random_sleep():
+    return random.randint(0, 20)
+
 def make_service(name):
     return {
         "build-%s" % name: {
             "stage": "build",
             "script":[
                 "echo Build %s" % name,
+                "sleep %s" % random_sleep(),
             ]
         },
         "deploy-%s" % name: {
             "stage": "deploy",
             "script":[
                 "echo Deploy %s" % name,
+                "sleep %s" % random_sleep(),
             ]
         }
     }
