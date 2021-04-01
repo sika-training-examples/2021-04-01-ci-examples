@@ -4,6 +4,9 @@ variables:
   XXX_B: $XXX_GROUP--foo
   XXX_C: $XXX_GROUP--$XXX_PROJECT
 
+before_script:
+  - export XXX_DD=$XXX_C------
+
 job1:
   script: env | grep XXX
 
@@ -11,5 +14,4 @@ job2:
   variables:
     XXX_LOCAL: local
     XXX_D: $XXX_GROUP--$XXX_PROJECT
-    XXX_DD: $XXX_C------
   script: env | grep XXX
