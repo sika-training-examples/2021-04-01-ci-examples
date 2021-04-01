@@ -5,6 +5,9 @@ stages:
 build:
   stage: build
   script: echo build & sleep 20
+  except:
+    variables:
+      - $SKIP_BUILD
 
 deploy:
   stage: deploy
