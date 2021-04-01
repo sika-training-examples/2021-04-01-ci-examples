@@ -4,4 +4,4 @@ def test_ok():
     assert 0
 
 def test_err():
-    assert 1
+    assert 0
